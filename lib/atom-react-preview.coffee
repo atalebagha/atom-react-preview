@@ -51,7 +51,7 @@ module.exports =
       return
 
     previousActivePane = atom.workspace.getActivePane()
-    atom.workspace.open(uri, split: 'right', searchAllPanes: true).done (reactPreviewView) ->
+    atom.workspace.open(uri, split: 'right', searchAllPanes: true).then (reactPreviewView) ->
       if reactPreviewView instanceof ReactPreviewView
         reactPreviewView.renderHTML()
         previousActivePane.activate()
